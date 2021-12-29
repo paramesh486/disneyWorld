@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Home Tour</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="./moving.js"></script>
+    <script src="./rocketmoveing.js"></script>
+    <script src="./move.js"></script>
+    <script src="./schmas/rotating.js"></script>
+    <script src="./schmas/Collider.js"></script>
+    
+
+
+</head>
+
+<body>
+    <a-scene background="color:#42aaf5">
+        <a-camera wasd-controls-enabled="true" position="0 0 0" camera-zoom-out></a-camera>
+    
+        <a-assets>
+            <a-asset-item id="tinker-obj" src="./land/tinker.obj"></a-asset-item>
+            <a-asset-item id="obj-mtl" src="./land/obj.mtl"></a-asset-item>
+            <!--rocket-->
+            <a-asset-item id="rocket-obj" src="./rocket/tinker.obj"></a-asset-item>
+            <a-asset-item id="rocket-mtl" src="./rocket/obj.mtl"></a-asset-item>
+            <!--rocket stand-->
+            <a-asset-item id="stand-obj" src="./rackstand/tinker.obj"></a-asset-item>
+            <a-asset-item id="stand-mtl" src="./rackstand/obj.mtl"></a-asset-item>
+            <!--gate-->
+            <a-asset-item id="gate-obj" src="./gate/tinker.obj"></a-asset-item>
+            <a-asset-item id="gate-mtl" src="./gate/obj.mtl"></a-asset-item>
+        </a-assets>
+
+       
+
+    
+    
+        <a-entity  id="terrain" obj-model="obj: #tinker-obj; mtl: #obj-mtl" position="0 -20 -100" rotation="-90 0 -90" scale="0.5 0.5 0.5" trees >
+        </a-entity>
+        <!--rocket-->
+        <a-entity obj-model="obj: #rocket-obj; mtl: #rocket-mtl" position="0 -20 -100" rotation="-90 0 -90" scale="0.1 0.1 0.1"
+            move-rock>
+        </a-entity>
+        <!--stand-->
+        <a-entity obj-model="obj: #stand-obj; mtl: #stand-mtl" position="0 -20 -150" rotation="-90 90 -90" scale="0.5 0.5 0.5" move-box-on-click></a-entity>
+        <!--gate-->
+                
+        <a-entity obj-model="obj: #gate-obj; mtl:  #gate-mtl" position="20 -20 -50" rotation="-90 0 0" scale="1 1 1" width='600'height="300" gate-rotation-readerLeft></a-entity>
+
+
+                      
+
+    </a-scene>
+   
+</body>
+
+</html>
